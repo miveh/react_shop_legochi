@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-// import { DashboardLayout, Loadable } from "../components";
+import { CustomerLayout, DashboardLayout } from "../components";
 import { lazy } from "react";
-
+import Dashboard from "../pages/dashboard/Dashboard";
+import Home from "../pages/Home";
+import Cart from "../pages/cart/Cart";
 // const Dashboard = Loadable(lazy(() => import("../page/dashboard/Dashboard")));
 
 export const router = createBrowserRouter([
@@ -26,5 +28,23 @@ export const router = createBrowserRouter([
         element: <div>orders</div>,
       },
     ],
+  },
+  {
+    path: "/",
+    element: <CustomerLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "wishlist",
+        element: <>wish list</>,
+      },
+    ],
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
