@@ -9,7 +9,7 @@ import {
   MenuItem,
   Menu,
 } from "@mui/material";
-import { CustomeSearch } from "../../../components";
+import { CustomeSearch, CartIcon } from "../../../components";
 import { menuId, mobileMenuId } from "../../../constant";
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -49,12 +49,8 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <CartIcon />
+        <p>cart</p>
       </MenuItem>
 
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -90,16 +86,7 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-
+            <CartIcon />
             <IconButton
               size="large"
               edge="end"
