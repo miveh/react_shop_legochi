@@ -90,7 +90,7 @@ export default function SignInSide() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              LogIn
+              Admin LogIn
             </Typography>
             <Box
               component="form"
