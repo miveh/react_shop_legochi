@@ -1,22 +1,8 @@
 import * as React from "react";
 
 import theme from "../../theme";
-import {
-  Avatar,
-  Button,
-  CssBaseline,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Link,
-  Paper,
-  Box,
-  Grid,
-  Typography,
-  ThemeProvider,
-} from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { AdminLoginForm } from "../../components/widget/admin-login/AdminLoginForm";
+import { CssBaseline, Paper, Grid, ThemeProvider } from "@mui/material";
+import { AdminLoginBgImage, AdminLoginForm } from "../../components";
 
 export default function SignInSide() {
   return (
@@ -25,24 +11,7 @@ export default function SignInSide() {
         <CssBaseline />
 
         {/* image */}
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          lg={8}
-          sx={{
-            backgroundImage:
-              "url(https://source.unsplash.com/random?wallpapers)",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (theme) =>
-              theme.palette.mode === "light"
-                ? theme.palette.grey[50]
-                : theme.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        <AdminLoginBgImage />
 
         {/* form */}
         <Grid
