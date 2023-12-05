@@ -88,8 +88,12 @@ const theme = createTheme({
     secondary: {
       main: "#19857b",
     },
+    grey: {
+      50: "#F3F4F6",
+      300: "#D1D5DB",
+    },
     neutral: {
-      100: "#F3F4F6",
+      50: "#F3F4F6",
       300: "#D1D5DB",
       400: "#9CA3AF",
       900: "#111827",
