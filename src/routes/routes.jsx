@@ -4,6 +4,7 @@ import { lazy } from "react";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Home from "../pages/Home";
 import Cart from "../pages/cart/Cart";
+import AdminLogin from "../pages/dashboard/AdminLogin";
 // const Dashboard = Loadable(lazy(() => import("../page/dashboard/Dashboard")));
 
 export const router = createBrowserRouter([
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
       },
+
       {
         path: "customer",
         element: <div>cutomers</div>,
@@ -46,5 +48,9 @@ export const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "login",
+    element: <AdminLogin />,
   },
 ]);
