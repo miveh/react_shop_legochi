@@ -17,16 +17,16 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "customer",
-        element: <div>cutomers</div>,
+        path: "pricing",
+        element: <div>pricing</div>,
       },
       {
         path: "products",
         element: <div>products</div>,
       },
       {
-        path: "accounts",
-        element: <div>accounts</div>,
+        path: "orders",
+        element: <div>orders</div>,
       },
     ],
   },
