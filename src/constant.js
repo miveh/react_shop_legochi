@@ -3,6 +3,8 @@ export const menuId = "primary-search-account-menu";
 export const mobileMenuId = "primary-search-account-menu-mobile";
 export const drawerWidth = 100;
 
+export const settings = ["Profile", "Dashboard", "Logout"];
+
 export const MenuItems = [
   {
     id: 1,
@@ -12,20 +14,20 @@ export const MenuItems = [
   },
   {
     id: 2,
-    label: "Customer",
+    label: "Products",
     Icon: SignalCellularAltIcon,
-    to: "/dashboard/customers",
+    to: "/dashboard/products",
   },
   {
     id: 3,
-    label: "Shop",
+    label: "Pricing",
     Icon: SignalCellularAltIcon,
-    to: "/dashboard/shop",
+    to: "/dashboard/pricing",
   },
   {
     id: 4,
-    label: "Account",
+    label: "Ordess",
     Icon: SignalCellularAltIcon,
-    to: "/dashboard/accounts",
+    to: "/dashboard/orders",
   },
 ];
