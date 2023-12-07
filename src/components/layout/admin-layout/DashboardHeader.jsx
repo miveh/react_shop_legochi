@@ -14,26 +14,15 @@ import {
   Icon,
 } from "@mui/material";
 import { LogoIcon } from "../../../assets/svg/LogoIcon";
-import MenuIcon from "@mui/icons-material/Menu";
-import { BackToSiteIcon } from "../../../components";
-import { useNavigate } from "react-router-dom";
-import { MenuItems, settings } from "../../../constant";
+import { BackToSiteIcon, DashboardHeaderMenu } from "../../../components";
+import { settings } from "../../../constant";
 
 function DashboardHeader() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const navigate = useNavigate();
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -69,64 +58,11 @@ function DashboardHeader() {
           >
             LegoChi
           </Typography> */}
-          <BackToSiteIcon />
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {MenuItems.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography
-                    onClick={() => {
-                      navigate(page.to);
-                    }}
-                    textAlign="center"
-                  >
-                    {page.label}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {MenuItems.map((page) => (
-              <Button
-                key={page.id}
-                onClick={() => {
-                  navigate(page.to);
-                }}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.label}
-              </Button>
-            ))}
-          </Box>
+          <BackToSiteIcon />
+
+          <DashboardHeaderMenu />
+
           <Typography
             variant="h6"
             noWrap
@@ -141,6 +77,7 @@ function DashboardHeader() {
           >
             Admin Panel
           </Typography>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
