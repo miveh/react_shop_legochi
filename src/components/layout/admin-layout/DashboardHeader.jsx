@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Avatar,
-  Tooltip,
-  Toolbar,
-  IconButton,
-  Typography,
-  AppBar,
-} from "@mui/material";
+import { Container, Toolbar, Typography, AppBar } from "@mui/material";
 import { LogoIcon } from "../../../assets/svg/LogoIcon";
 import {
   BackToSiteIcon,
@@ -17,10 +8,6 @@ import {
 } from "../../../components";
 
 function DashboardHeader() {
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -70,15 +57,7 @@ function DashboardHeader() {
             Admin Panel
           </Typography>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="admin avatar" src="./../src/assets/svg/Icon.svg" />
-              </IconButton>
-            </Tooltip>
-
-            <DashboardHeaderUserMenu />
-          </Box>
+          <DashboardHeaderUserMenu />
         </Toolbar>
       </Container>
     </AppBar>
