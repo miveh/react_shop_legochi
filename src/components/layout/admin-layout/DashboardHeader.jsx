@@ -3,30 +3,22 @@ import {
   Box,
   Container,
   Avatar,
-  Button,
   Tooltip,
   Toolbar,
   IconButton,
   Typography,
-  Menu,
-  MenuItem,
   AppBar,
-  Icon,
 } from "@mui/material";
 import { LogoIcon } from "../../../assets/svg/LogoIcon";
-import { BackToSiteIcon, DashboardHeaderMenu } from "../../../components";
-import { settings } from "../../../constant";
+import {
+  BackToSiteIcon,
+  DashboardHeaderUserMenu,
+  DashboardHeaderMenu,
+} from "../../../components";
 
 function DashboardHeader() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -81,32 +73,11 @@ function DashboardHeader() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="./../src/assets/svg/Icon.svg" />
+                <Avatar alt="admin avatar" src="./../src/assets/svg/Icon.svg" />
               </IconButton>
             </Tooltip>
 
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <DashboardHeaderUserMenu />
           </Box>
         </Toolbar>
       </Container>
