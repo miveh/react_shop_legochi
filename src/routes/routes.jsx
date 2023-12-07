@@ -16,7 +16,6 @@ export const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
       },
-
       {
         path: "customer",
         element: <div>cutomers</div>,
@@ -27,7 +26,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "accounts",
-        element: <div>orders</div>,
+        element: <div>accounts</div>,
       },
     ],
   },
