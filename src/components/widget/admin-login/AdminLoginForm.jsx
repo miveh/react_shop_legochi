@@ -3,7 +3,6 @@ import React from "react";
 import {
   Avatar,
   Button,
-  TextField,
   FormControlLabel,
   Checkbox,
   Link,
@@ -12,25 +11,10 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { CustomeTextField } from "../../../components";
 import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
-
-const LoginSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string()
-    .required("Required")
-    .min(8, "Password must be at least 8 characters")
-    .matches(/[a-z]/, "Password must contain at least one lowercase letter")
-    .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
-    .matches(/[0-9]/, "Password must contain at least one number")
-    .matches(
-      /[^a-zA-Z0-9]/,
-      "Password must contain at least one special character"
-    ),
-});
+import { LoginSchema } from "../../../utils";
 
 function Copyright(props) {
   return (
