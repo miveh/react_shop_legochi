@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
     element: <Cart />,
   },
   {
-    path: "login",
+    path: "admin-login",
     element: <AdminLogin />,
   },
 ]);
