@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, Box, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
@@ -19,7 +19,9 @@ import {
   randomArrayItem,
   randomUrl,
 } from "@mui/x-data-grid-generator";
-import { Image } from "@mui/icons-material";
+import { getProducts } from "../../api/product";
+import { getCategories, getCategoryById } from "../../api/category";
+
 const roles = ["Market", "Finance", "Development"];
 const randomRole = () => {
   return randomArrayItem(roles);
@@ -262,7 +264,8 @@ function EditToolbar(props) {
   const { setRows, setRowModesModel } = props;
 
   const handleClick = () => {
-    console.log("new product");
+    // const products = getProducts();
+    console.log("product added");
   };
 
   return (
@@ -275,14 +278,22 @@ function EditToolbar(props) {
 }
 
 function DashboardProducts() {
-  const [rows, setRows] = useState(initialRows);
+  const [rows, setRows] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [rowModesModel, setRowModesModel] = useState({});
 
+  useEffect(() => {
+    getProducts().then((data) => setRows(data.data.products));
+  }, []);
   const handleRowEditStop = (params, event) => {
     if (params.reason === GridRowEditStopReasons.rowFocusOut) {
       event.defaultMuiPrevented = true;
     }
   };
+
+  useEffect(() => {
+    getCategories().then((data) => setCategories(data.data.categories));
+  }, []);
 
   const handleEditClick = (id) => () => {
     console.log("edit clicked");
@@ -313,7 +324,9 @@ function DashboardProducts() {
       headerName: "Category",
       width: 220,
       type: "text",
-      valueOptions: ["Market", "Finance", "Development"],
+      renderCell: (params) => {
+        return <div>{params.value}</div>;
+      },
     },
     {
       field: "actions",
@@ -375,6 +388,7 @@ function DashboardProducts() {
         disableSelectionOnClick={true}
         disableColumnSelector={true}
         rows={rows}
+        getRowId={(row) => row._id}
         columns={columns}
         onRowEditStop={handleRowEditStop}
         slots={{
