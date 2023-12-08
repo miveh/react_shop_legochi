@@ -9,9 +9,17 @@ export function DashboardLayout() {
     <>
       <CssBaseline />
       <DashboardHeader />
-      <Box component={"main"} sx={{ flexGrow: 1, p: 3, mt: "48px" }}>
+      <Box
+        component={"main"}
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          mt: "48px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <Outlet />
-        {"ok"}
       </Box>
     </>
   );
