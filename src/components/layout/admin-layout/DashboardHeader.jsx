@@ -12,32 +12,6 @@ function DashboardHeader() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <Box
-            component="img"
-            sx={{
-              height: 50,
-              width: 50,
-            }}
-            src="./../src/assets/svg/Icon.svg"
-          />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LegoChi
-          </Typography> */}
-
           <BackToSiteIcon />
 
           <DashboardHeaderMenu />
