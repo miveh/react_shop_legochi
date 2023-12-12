@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Cart from "../pages/cart/Cart";
 import AdminLogin from "../pages/dashboard/AdminLogin";
 import DashboardProducts from "../pages/dashboard/DashboardProducts";
+import Accounnt from "../pages/profile/Accounnt";
 // const Dashboard = Loadable(lazy(() => import("../page/dashboard/Dashboard")));
 
 export const router = createBrowserRouter([
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/account",
+        element: <Accounnt />,
       },
       {
         path: "wishlist",
