@@ -23,7 +23,7 @@ export default function PrimarySearchAppBar() {
   const navigate = useNavigate();
 
   const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+    navigate("/account");
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -84,6 +84,7 @@ export default function PrimarySearchAppBar() {
             onClick={() => navigate("/")}
             src="./../src/assets/svg/Icon.svg"
           />
+
           <Typography
             variant="h6"
             noWrap
