@@ -39,7 +39,7 @@ export function AdminLoginForm() {
 
   const handleSubmit = (value) => {
     console.log(value);
-    navigate("/");
+    navigate("/dashboard/orders");
   };
 
   return (
